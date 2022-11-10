@@ -1,8 +1,8 @@
 /* 
- * File:   UART2.h
- * Author: Tanmay
+ * File:   UART.h
+ * Author: jamie
  *
- * Created on November 7, 2022, 4:29 PM
+ * Created on October 27, 2022, 11:58 AM
  */
 
 #ifndef UART2_H
@@ -12,12 +12,19 @@
 extern "C" {
 #endif
 
-
-
-
 #ifdef	__cplusplus
 }
 #endif
+
+void InitUART2(void);
+void XmitUART2(char, unsigned int);
+
+void __attribute__ ((interrupt, no_auto_psv)) _U2TXInterrupt(void); 
+
+void Disp2Hex(unsigned int);
+void Disp2Hex32(unsigned long int);
+void Disp2String(char*);
+void Disp2Dec(unsigned int);
 
 #endif	/* UART2_H */
 
